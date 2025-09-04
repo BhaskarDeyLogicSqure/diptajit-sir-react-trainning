@@ -1,0 +1,170 @@
+[
+  {
+    "id": 1,
+    "naturalNumber": 1,
+    "name": "Hardik Pandya",
+    "position": "All-Rounder"
+  },
+  {
+    "id": 2,
+    "naturalNumber": 2,
+    "name": "Ben Stokes",
+    "position": "All-Rounder"
+  },
+  {
+    "id": 3,
+    "naturalNumber": 3,
+    "name": "Ravindra Jadeja",
+    "position": "All-Rounder"
+  },
+  {
+    "id": 4,
+    "naturalNumber": 4,
+    "name": "Shakib Al Hasan",
+    "position": "All-Rounder"
+  },
+  {
+    "id": 5,
+    "naturalNumber": 5,
+    "name": "Andre Russell",
+    "position": "All-Rounder"
+  },
+  {
+    "id": 6,
+    "naturalNumber": 6,
+    "name": "Glenn Maxwell",
+    "position": "All-Rounder"
+  },
+  {
+    "id": 7,
+    "naturalNumber": 7,
+    "name": "Kieron Pollard",
+    "position": "All-Rounder"
+  },
+  {
+    "id": 8,
+    "naturalNumber": 8,
+    "name": "Jasprit Bumrah",
+    "position": "Bowler"
+  },
+  {
+    "id": 9,
+    "naturalNumber": 9,
+    "name": "Mitchell Starc",
+    "position": "Bowler"
+  },
+  {
+    "id": 10,
+    "naturalNumber": 10,
+    "name": "Pat Cummins",
+    "position": "Bowler"
+  },
+  {
+    "id": 11,
+    "naturalNumber": 11,
+    "name": "Trent Boult",
+    "position": "Bowler"
+  },
+  {
+    "id": 12,
+    "naturalNumber": 12,
+    "name": "Rashid Khan",
+    "position": "Bowler"
+  },
+  {
+    "id": 13,
+    "naturalNumber": 13,
+    "name": "Kagiso Rabada",
+    "position": "Bowler"
+  },
+  {
+    "id": 14,
+    "naturalNumber": 14,
+    "name": "Shaheen Afridi",
+    "position": "Bowler"
+  },
+  {
+    "id": 15,
+    "naturalNumber": 15,
+    "name": "MS Dhoni",
+    "position": "Wicket Keeper"
+  },
+  {
+    "id": 16,
+    "naturalNumber": 16,
+    "name": "Jos Buttler",
+    "position": "Wicket Keeper"
+  },
+  {
+    "id": 17,
+    "naturalNumber": 17,
+    "name": "Rishabh Pant",
+    "position": "Wicket Keeper"
+  },
+  {
+    "id": 18,
+    "naturalNumber": 18,
+    "name": "Quinton de Kock",
+    "position": "Wicket Keeper"
+  },
+  {
+    "id": 19,
+    "naturalNumber": 19,
+    "name": "Kumar Sangakkara",
+    "position": "Wicket Keeper"
+  },
+  {
+    "id": 20,
+    "naturalNumber": 20,
+    "name": "Adam Gilchrist",
+    "position": "Wicket Keeper"
+  },
+  {
+    "id": 21,
+    "naturalNumber": 21,
+    "name": "Brendon McCullum",
+    "position": "Wicket Keeper"
+  },
+  {
+    "id": 22,
+    "naturalNumber": 22,
+    "name": "Virat Kohli",
+    "position": "Batsman"
+  },
+  {
+    "id": 23,
+    "naturalNumber": 23,
+    "name": "Rohit Sharma",
+    "position": "Batsman"
+  },
+  {
+    "id": 24,
+    "naturalNumber": 24,
+    "name": "Steve Smith",
+    "position": "Batsman"
+  },
+  {
+    "id": 25,
+    "naturalNumber": 25,
+    "name": "Kane Williamson",
+    "position": "Batsman"
+  },
+  {
+    "id": 26,
+    "naturalNumber": 26,
+    "name": "Joe Root",
+    "position": "Batsman"
+  },
+  {
+    "id": 27,
+    "naturalNumber": 27,
+    "name": "David Warner",
+    "position": "Batsman"
+  },
+  {
+    "id": 28,
+    "naturalNumber": 28,
+    "name": "AB de Villiers",
+    "position": "Batsman"
+  }
+]
