@@ -7,6 +7,19 @@ declare global {
     name: string;
     position: PlayerPosition;
   }
+
+  interface AuthState {
+    isAuthenticated: boolean;
+    login: (email: string, password: string) => boolean;
+    logout: () => void;
+  }
+  interface CricketerState extends AuthState {
+    allPlayers: Player[];
+    preferredPlayers: Player[];
+    addToPreferred: (player: Player) => void;
+    removeFromPreferred: (player: Player) => void;
+  }
+  
 }
 
 export {};
