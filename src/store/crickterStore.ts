@@ -1,7 +1,11 @@
 import { create } from "zustand";
 import allPlayer from "../data/cricket.json";
-
-interface CricketerState {
+interface AuthState {
+  isAuthenticated: boolean;
+  login: (email: string, password: string) => boolean;
+  logout: () => void;
+}
+interface CricketerState extends AuthState {
   allPlayers: Player[];
   preferredPlayers: Player[];
   addToPreferred: (player: Player) => void;
@@ -9,6 +13,24 @@ interface CricketerState {
 }
 
 const useCricketerStore = create<CricketerState>((set) => ({
+  isAuthenticated: false,
+  login: (email, password) => {
+    if (
+      email.toString() === "test@example.com" &&
+      password.toString() === "123456"
+    ) {
+      set({ isAuthenticated: true });
+      localStorage.setItem("auth", "true");
+      return true;
+    }
+    alert("Invalid credentials");
+    return false;
+  },
+  logout: () => {
+    set({ isAuthenticated: false });
+    localStorage.removeItem("auth");
+  },
+
   allPlayers: allPlayer as Player[],
   preferredPlayers: [],
   addToPreferred: (player) =>

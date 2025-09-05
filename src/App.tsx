@@ -1,23 +1,20 @@
 import "./styles/global.css";
-import AllPlayer from './components/AllPlayer';
-import PreferredPlayer from './components/PreferredPlayer';
+import { Routes, Route, Navigate } from "react-router-dom";
+import LoginPage from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 
 const App = () => {
+  const isAuthenticated = Boolean(localStorage.getItem("auth")) || false;
+  console.log("isAuthenticated", isAuthenticated);
+
   return (
-    <div className="app-container">
-      <header className="header">
-        <h1 className="app-title">Cricketer Selector</h1>
-        <p className="header-sub">Pick your favorite players</p>
-      </header>
-
-      <div className="grid">
-        <AllPlayer />
-      </div>
-
-      <aside className="preferred">
-        <PreferredPlayer />
-      </aside>
-    </div>
+    <Routes>
+      <Route path="/" element={<LoginPage />} />
+      <Route
+        path="/dashboard"
+        element={isAuthenticated ? <Dashboard /> : <Navigate to="/" replace />}
+      />
+    </Routes>
   );
 };
 

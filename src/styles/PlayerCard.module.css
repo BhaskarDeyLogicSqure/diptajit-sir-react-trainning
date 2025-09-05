@@ -2,15 +2,19 @@
   background: var(--card-bg, #fff);
   border-radius: 12px;
   padding: 14px;
-  box-shadow: 0 8px 22px rgba(2,6,23,0.06);
-  transition: transform 150ms ease, box-shadow 150ms ease;
+  box-shadow: 0 8px 22px rgba(2, 6, 23, 0.06);
+  transition: transform 150ms ease, box-shadow 150ms ease, opacity 140ms ease;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  cursor: grab;
+}
+.card:active {
+  cursor: grabbing;
 }
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(2,6,23,0.08);
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.08);
 }
 
 .header {
@@ -32,10 +36,18 @@
 }
 
 /* Position color variants */
-.positionBatsman { background: linear-gradient(90deg,#fb923c,#f97316); }
-.positionBowler { background: linear-gradient(90deg,#60a5fa,#3b82f6); }
-.positionAllrounder { background: linear-gradient(90deg,#34d399,#10b981); }
-.positionWk { background: linear-gradient(90deg,#a78bfa,#7c3aed); }
+.positionBatsman {
+  background: linear-gradient(90deg, #fb923c, #f97316);
+}
+.positionBowler {
+  background: linear-gradient(90deg, #60a5fa, #3b82f6);
+}
+.positionAllrounder {
+  background: linear-gradient(90deg, #34d399, #10b981);
+}
+.positionWk {
+  background: linear-gradient(90deg, #a78bfa, #7c3aed);
+}
 
 .actions {
   display: flex;
@@ -55,14 +67,31 @@
 .remove {
   background: transparent;
   color: var(--danger, #ef4444);
-  border: 1px solid rgba(239,68,68,0.12);
+  border: 1px solid rgba(239, 68, 68, 0.12);
   border-radius: 8px;
   padding: 8px 10px;
   cursor: pointer;
 }
+
+/* Disabled state for buttons */
 .disable {
   opacity: 0.5;
   cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(18%);
+}
+
+/* Visual when this card is being dragged */
+.dragging {
+  opacity: 0.6;
+  transform: scale(0.98);
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.04);
+}
+
+/* When a card is a valid drop target highlight it */
+.dropTarget {
+  outline: 2px dashed rgba(37, 99, 235, 0.16);
+  outline-offset: 4px;
 }
 
 /* Small text */
