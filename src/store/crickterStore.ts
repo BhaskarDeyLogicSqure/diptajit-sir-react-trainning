@@ -5,7 +5,7 @@ const useCricketerStore = create<CricketerState>((set) => ({
   isAuthenticated: false,
   login: (email, password) => {
     if (
-      email.toString() === "test@example.com" &&
+      email.toString() === "bhaskardey772@gmail.com" &&
       password.toString() === "123456"
     ) {
       set({ isAuthenticated: true });
@@ -20,8 +20,22 @@ const useCricketerStore = create<CricketerState>((set) => ({
     localStorage.removeItem("auth");
   },
 
-  allPlayers: allPlayer as Player[],
-  preferredPlayers: [],
+  allPlayers:  (JSON.parse(localStorage.getItem("preferredPlayers") || "[]") as Player[])
+        .length > 0
+      ? (allPlayer as Player[]).filter(
+          (p) =>
+            !(
+              JSON.parse(
+                localStorage.getItem("preferredPlayers") || "[]"
+              ) as Player[]
+            ).find((pref) => pref.id === p.id)
+        )
+    : (allPlayer as Player[]),
+
+  preferredPlayers: localStorage.getItem("preferredPlayers")
+    ? (JSON.parse(localStorage.getItem("preferredPlayers") || "[]") as Player[])
+    : ([] as Player[]),
+
   addToPreferred: (player) =>
     set((state) => {
       // counts by position
@@ -67,20 +81,36 @@ const useCricketerStore = create<CricketerState>((set) => ({
         alert("You cannot add more than 15 players to the preferred list.");
         return { preferredPlayers: state.preferredPlayers };
       }
+      const updatedPreferredPlayers = [...state.preferredPlayers, player];
+      // update local storage
+      localStorage.setItem(
+        "preferredPlayers",
+        JSON.stringify(updatedPreferredPlayers)
+      );
 
       // add player
       return {
-        preferredPlayers: [...state.preferredPlayers, player],
+        preferredPlayers: updatedPreferredPlayers,
         allPlayers: state.allPlayers.filter((p) => p.id !== player.id),
       };
     }),
   removeFromPreferred: (player) =>
-    set((state) => ({
-      preferredPlayers: state.preferredPlayers.filter(
+    set((state) => {
+      // remove player
+      const updatedPreferredPlayers = state.preferredPlayers.filter(
         (p) => p.id !== player.id
-      ),
-      allPlayers: [...state.allPlayers, player].sort((a, b) => a.id - b.id),
-    })),
+      );
+      // update local storage
+      localStorage.setItem(
+        "preferredPlayers",
+        JSON.stringify(updatedPreferredPlayers)
+      );
+
+      return {
+        preferredPlayers: updatedPreferredPlayers,
+        allPlayers: [...state.allPlayers, player].sort((a, b) => a.id - b.id),
+      };
+    }),
 }));
 
 export default useCricketerStore;

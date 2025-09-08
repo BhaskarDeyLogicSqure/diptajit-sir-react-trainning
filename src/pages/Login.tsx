@@ -36,6 +36,7 @@ const LoginPage = () => {
           <div className="form-group">
             <label>Email</label>
             <input
+              datatype="email"
               type="email"
               placeholder="you@example.com"
               {...register("email", { required: "Email is required" })}
@@ -50,7 +51,9 @@ const LoginPage = () => {
           {/* Password */}
           <div className="form-group">
             <label>Password</label>
+            <div className="password-toggle">
             <input
+              datatype="password"
               type="password"
               placeholder="••••••••"
               {...register("password", {
@@ -58,6 +61,20 @@ const LoginPage = () => {
                 minLength: { value: 6, message: "Min 6 characters" },
               })}
             />
+            {/* eye button */}
+            <button type="button" className="eye-button" onClick={() => {
+              const pwdField = document.querySelector('input[datatype="password"]') as HTMLInputElement;
+              if (pwdField) {
+                if (pwdField.type === "password") {
+                  pwdField.type = "text";
+                } else {
+                  pwdField.type = "password";
+                }
+              }
+            }}>
+              <span role="img" aria-label="Toggle Password Visibility">👁️</span>
+            </button>
+            </div>
             {errors.password && (
               <span style={{ color: "red", fontSize: "0.8rem" }}>
                 {errors.password.message}
