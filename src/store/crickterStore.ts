@@ -18,6 +18,7 @@ const useCricketerStore = create<CricketerState>((set) => ({
   logout: () => {
     set({ isAuthenticated: false });
     localStorage.removeItem("auth");
+    window.location.href = "/";
   },
 
   allPlayers:  (JSON.parse(localStorage.getItem("preferredPlayers") || "[]") as Player[])

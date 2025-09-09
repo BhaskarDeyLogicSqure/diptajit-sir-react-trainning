@@ -2,7 +2,6 @@ import { useState } from "react";
 import AllPlayer from "../components/AllPlayer";
 import PreferredPlayer from "../components/PreferredPlayer";
 import useCricketerStore from "../store/crickterStore";
-import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const {
@@ -12,7 +11,6 @@ const Dashboard = () => {
     removeFromPreferred,
     logout,
   } = useCricketerStore();
-  const navigate = useNavigate();
   const [isOverAll, setIsOverAll] = useState(false);
   const [isOverPreferred, setIsOverPreferred] = useState(false);
 
@@ -61,7 +59,6 @@ const Dashboard = () => {
           className="logout-button"
           onClick={() => {
             logout();
-            navigate("/");
           }}
         >
           Logout
