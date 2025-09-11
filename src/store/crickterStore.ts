@@ -2,7 +2,7 @@ import { create } from "zustand";
 import allPlayer from "../data/cricket.json";
 
 const useCricketerStore = create<CricketerState>((set) => ({
-  isAuthenticated: false,
+  isAuthenticated: Boolean(localStorage.getItem("auth")),
   login: (email, password) => {
     if (
       email.toString() === "bhaskardey772@gmail.com" &&

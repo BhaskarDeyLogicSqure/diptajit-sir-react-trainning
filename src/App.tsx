@@ -7,7 +7,7 @@ import useCricketerStore from "./store/crickterStore";
 const App = () => {
 
   const isAuthenticatedFromStore = useCricketerStore((s) => s.isAuthenticated);
-  const isAuthenticated = isAuthenticatedFromStore || Boolean(localStorage.getItem("auth"));
+  const isAuthenticated = isAuthenticatedFromStore ;
   console.log(isAuthenticated);
 
   return (
