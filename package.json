@@ -5,6 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "docker:dev": "docker build -f Dockerfile.dev -t vite-react-dev .",
+    "docker:dev:run": "docker run -it -p 5173:5173 -v $(pwd):/app vite-react-dev",
+    "docker:build": "docker build -t react-diptajit-sir-trainning .",
+    "docker:run": "docker run -p 5173:5173 react-diptajit-sir-trainning",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
