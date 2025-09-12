@@ -1,6 +1,5 @@
 import { create } from "zustand";
 import allPlayer from "../data/cricket.json";
-
 const useCricketerStore = create<CricketerState>((set) => ({
   isAuthenticated: Boolean(localStorage.getItem("auth")),
   login: (email, password) => {
@@ -15,10 +14,9 @@ const useCricketerStore = create<CricketerState>((set) => ({
     alert("Invalid credentials");
     return false;
   },
-  logout: () => {
+    logout: () => {
     set({ isAuthenticated: false });
     localStorage.removeItem("auth");
-    window.location.href = "/";
   },
 
   allPlayers:  (JSON.parse(localStorage.getItem("preferredPlayers") || "[]") as Player[])

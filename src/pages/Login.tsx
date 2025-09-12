@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import "../styles/global.css";
 import useCricketerStore from "../store/crickterStore";
